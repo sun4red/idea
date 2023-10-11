@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<%
-request.setCharacterEncoding("utf-8");
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,18 +9,18 @@ request.setCharacterEncoding("utf-8");
 <body>
 	<form method = "post" name = "loginform" action = "logincheck.jsp">
 		<table border="1">
-			<caption>·Î±×ÀÎ</caption>
+			<caption>ë¡œê·¸ì¸</caption>
 			<tr>
-				<th>ÀÌ¸§</th>
+				<th>ì´ë¦„</th>
 				<td><input type="text" id="name" name="name"></td>
 			</tr>
 			<tr>
-				<th>ºñ¹Ğ¹øÈ£</th>
+				<th>ë¹„ë°€ë²ˆí˜¸</th>
 				<td><input type="text" id="pw" name="name"></td>
 			</tr>
 			<tr>
 			<td colspan = "2" align = "center">
-			<input type = "submit" value ="·Î±×ÀÎ">
+			<input type = "submit" value ="ë¡œê·¸ì¸">
 			</td>
 			</tr>
 		</table>

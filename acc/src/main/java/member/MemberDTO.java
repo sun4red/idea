@@ -1,4 +1,4 @@
-package acc;
+package member;
 
 public class MemberDTO {
 
