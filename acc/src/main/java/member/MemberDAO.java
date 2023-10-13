@@ -2,6 +2,9 @@ package member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -13,7 +16,7 @@ private static MemberDAO instance = new MemberDAO();
 public static MemberDAO getInstance(){
 	return instance;
 }
-private Connection getConnection() throws Exception {
+private Connection getConnect() throws Exception {
 
 	Context init = new InitialContext();
 	DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/mysqlDB");
@@ -32,7 +35,7 @@ public int insert(MemberDTO member) {
 	
 	try {
 
-	con = getConnection();
+	con = getConnect();
 	
 	sql = "insert into member values(?, ?)";
 	
@@ -58,7 +61,55 @@ public int insert(MemberDTO member) {
 	return result;
 }
 
+// 사용자 확인 ( 로그인 )
 
+public int pwCheck(MemberDTO member) {
+	int result = 0;
+	
+	String name = "", pw = "";
+	
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	try {
+		
+		con = getConnect();
+		
+		String sql = "select * from member where name = ?";
+		
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, member.getName());
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			name = rs.getString("name");
+			pw = rs.getString("pw");
+		}
+		
+		if(name == "") {
+			result = -1;
+		}else if(name != ""&& !pw.equals(member.getPw())) {
+			result = -2;
+		}else if(name != ""&& pw.equals(member.getPw())) {
+			result = 1;
+		}
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}finally {
+		try {
+			if(rs != null)	rs.close();
+			if(pstmt != null)	pstmt.close();
+			if(con != null)	con.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	return result;
+}
 
 }
 

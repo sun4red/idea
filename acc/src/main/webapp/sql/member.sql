@@ -8,3 +8,5 @@ pw varchar(10));
 select * from member;
 
 insert into member values('선홍', '2143');
+
+alter table member add primary key(name);

@@ -16,11 +16,12 @@ if(result == 1){
 %>
 <script>
 	alert("사용자 등록 완료");
-	
+	location.href="../index.jsp";
 </script>
 <% }else {%>
 <script>
 	alert("사용자 등록 실패");
+	history.go(-1);
 </script>
 
 <% }	%>

@@ -3,11 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+
+
+<meta charset="UTF-8">
+<title>사용자 로그인</title>
+
+<script src = "http://code.jquery.com/jquery-latest.js"></script>
+<script src = "login.js"></script>
+
 </head>
 <body>
-	<form method = "post" name = "loginform" action = "logincheck.jsp">
+	<form method = "post" name = "loginform" action = "login.jsp">
 		<table border="1">
 			<caption>로그인</caption>
 			<tr>
@@ -16,7 +22,7 @@
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type="text" id="pw" name="name"></td>
+				<td><input type="password" id="pw" name="pw"></td>
 			</tr>
 			<tr>
 			<td colspan = "2" align = "center">
