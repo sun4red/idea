@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+		
 	$("form").submit(function(){
 		
 		if($("#name").val() == ""){

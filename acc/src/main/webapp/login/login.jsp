@@ -33,7 +33,7 @@ if(result == -1){	// 이름 불일치
 %>
 	<script>
 	alert("<%=member.getName() %> 접속");
-	location.href = "../index.jsp";
+	location.href = "setSession.jsp?name=<%=member.getName()%>";
 	</script>
 <%
 }

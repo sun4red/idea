@@ -9,19 +9,39 @@
 
 <%
 MemberDAO dao = MemberDAO.getInstance();
-int result = dao.insert(member);
+int check1 = dao.nameCheck(member.getName());
 
-
-if(result == 1){
+if(check1 == 1){
 %>
-<script>
-	alert("사용자 등록 완료");
-	location.href="../index.jsp";
-</script>
+	
+	<script>
+	alert("이미 등록된 사용자");
+	history.go(-1);
+	</script>	
+	
+	
+<%	
+
+}else{
+
+	int result = dao.insert(member);
+	if(result == 1){
+%>
+	<script>
+		alert("사용자 등록 완료");
+		location.href="../index.jsp";
+	</script>
+
+
+
+
 <% }else {%>
 <script>
 	alert("사용자 등록 실패");
 	history.go(-1);
 </script>
 
-<% }	%>
+<% 
+	}
+}
+%>

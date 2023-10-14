@@ -111,5 +111,53 @@ public int pwCheck(MemberDTO member) {
 	return result;
 }
 
+// 중복 아이디 확인
+
+
+public int nameCheck(String name) {
+	int result = 0;
+	
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	try {
+		
+		String exist_Name = "";
+
+		con = getConnect();
+		
+		String sql = "select * from member where name = ?";
+		
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, name);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()) {
+			exist_Name = rs.getString("name");
+		}
+		
+		if(name.equals(exist_Name)) {
+			result = 1;
+		}else if(exist_Name == "") {
+			result = -1;
+		}
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}finally {
+		try {
+			if(rs != null)	rs.close();
+			if(pstmt != null)	pstmt.close();
+			if(con != null)	con.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	return result;
+}
+
 }
 

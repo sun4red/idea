@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-	<%String msg_exist = " "; %>
 	
 <!DOCTYPE html>
 <html>
@@ -19,8 +18,6 @@
 				<td>이름</td>
 				<td>
 				<input type="text" id="name" name="name">
-				<br>
-				<%=msg_exist %>
 				</td>
 			</tr>
 			<tr>
