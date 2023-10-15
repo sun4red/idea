@@ -16,7 +16,7 @@
 <body>
 
 <script>
-location.href="../index.jsp";
+location.href="state.jsp";
 </script>
 
 

@@ -19,13 +19,10 @@
 			<tr>
 				<th>이름</th>
 				<td><input type="text" id="name" name="name"></td>
-			</tr>
-			<tr>
+
 				<th>비밀번호</th>
 				<td><input type="password" id="pw" name="pw"></td>
-			</tr>
-			<tr>
-			<td colspan = "2" align = "center">
+			<td align = "center">
 			<input type = "submit" value ="로그인">
 			</td>
 			</tr>
