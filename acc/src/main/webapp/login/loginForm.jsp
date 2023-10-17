@@ -13,6 +13,7 @@
 
 </head>
 <body>
+<a href = "../index.jsp">home</a>
 	<form method = "post" name = "loginform" action = "login.jsp">
 		<table border="1">
 			<caption>로그인</caption>

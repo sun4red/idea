@@ -19,9 +19,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>접속자 정보</title>
 </head>
 <body>
+<a href = "../index.jsp">home</a>
 
 <form method = "post" action = "logout.jsp">
 <table border = "1">

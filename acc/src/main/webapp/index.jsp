@@ -11,8 +11,6 @@
     }
     
     %>
-    
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,17 +19,23 @@
 </head>
 <body>
 
+<%-- <jsp:include page = "login/loginForm.jsp" flush = "false"/>  --%>
 <form>
 <table>
 <tr>
 <td>
-빈공간
+<!-- <a href = "../index.jsp">home</a>  -->
 </td>
 </tr>
 <tr>
 <h3 align = "center">선홍의 정산 프로그램</h1>
 </tr>
-
+<tr>
+<td>
+<input type = "button" value = "사용자 정보 페이지" 
+onClick = "location.href='login/state.jsp'"/>
+</td>
+</tr>
 </table>
 
 </form>

@@ -20,7 +20,7 @@
     if(name.equals("")){
 %>
 	<script>
-	location.href = "loginForm.jsp";
+	location.href="loginForm.jsp";
 	
 	</script>
     	
@@ -30,7 +30,7 @@
 %>    
     
 <script>
-	location.href = "viesSession.jsp";
+	location.href = "viewSession.jsp";
 </script>    
     
     <%
