@@ -1,7 +1,18 @@
+<%@page import="java.util.Enumeration"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-	<% String member = "선홍"; %>
+	<% 
+	String member = "";
+	
+	Enumeration attr = session.getAttributeNames();
+	while(	attr.hasMoreElements()	){
+		String attrName = (String)attr.nextElement();
+		String attrValue = (String)session.getAttribute(attrName);
+	member = attrValue;
+	}
+	
+	%>
 	
 <!DOCTYPE html>
 <html>
@@ -12,6 +23,8 @@
 <body>
 	<form method = "post" action = "receipt.jsp">
 	<input type = "hidden" name = "member" value = "<%=member %>">
+	<a href = "../index.jsp">메인화면</a><br>
+	<a href = "paymentList.jsp">전체 결제 내역</a><br>
 		<table border = "1">
 			<tr>
 				<td>결제인</td>

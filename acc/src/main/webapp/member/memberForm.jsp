@@ -11,6 +11,8 @@
 <title>사용자 등록</title>
 </head>
 <body>
+<a href = "../index.jsp">메인화면</a><br>
+<a href = "../login/loginForm.jsp">로그인</a><br>
 	<form  method = "post" action = "member.jsp">
 		<table border = "1">
 			<caption>사용자 등록</caption>

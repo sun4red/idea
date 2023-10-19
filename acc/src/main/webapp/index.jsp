@@ -35,6 +35,10 @@
 <input type = "button" value = "사용자 정보 페이지" 
 onClick = "location.href='login/state.jsp'"/>
 </td>
+<td>
+<input type = "button" value = "전체 결제 내역" 
+onClick = "location.href='payment/paymentList.jsp'"/>
+</td>
 </tr>
 </table>
 
