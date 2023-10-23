@@ -1,6 +1,6 @@
-package payment;
+package dto;
 
-public class PaymentObject {
+public class PaymentDTO {
 	
 	private String member;
 	private double amount;

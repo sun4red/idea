@@ -1,4 +1,4 @@
-package payment;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +9,8 @@ import java.util.List;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+
+import dto.PaymentDTO;
 
 public class PaymentDAO {
 
@@ -26,7 +28,7 @@ public class PaymentDAO {
 
 	}
 
-	public int recieptIn(PaymentObject payment) {
+	public int recieptIn(PaymentDTO payment) {
 		int result = 0;
 
 		Connection con = null;
@@ -59,8 +61,8 @@ public class PaymentDAO {
 		return result;
 	}
 
-	public List<PaymentObject> getPaymentList() {
-		List<PaymentObject> list = new ArrayList<PaymentObject>();
+	public List<PaymentDTO> getPaymentList() {
+		List<PaymentDTO> list = new ArrayList<PaymentDTO>();
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -74,7 +76,7 @@ public class PaymentDAO {
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				PaymentObject po = new PaymentObject();
+				PaymentDTO po = new PaymentDTO();
 				po.setMember(rs.getString("member"));
 				po.setAmount(rs.getDouble("amount"));
 				po.setItem(rs.getString("item"));

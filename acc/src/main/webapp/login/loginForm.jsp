@@ -15,7 +15,7 @@
 <body>
 <a href = "../index.jsp">home</a>
 <a href = "../member/memberForm.jsp">사용자 등록</a>
-	<form method = "post" name = "loginform" action = "login.jsp">
+	<form method = "post" name = "loginform" action = "Login.acc">
 		<table border="1">
 			<caption>로그인</caption>
 			<tr>
