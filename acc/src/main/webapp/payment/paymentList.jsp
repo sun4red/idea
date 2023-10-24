@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="payment.PaymentObject"%>
+<%@page import="dto.PaymentDTO"%>
 <%@page import="java.util.List"%>
-<%@page import="payment.PaymentDAO"%>
+<%@page import="dao.PaymentDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
 <%
 
 PaymentDAO dao = PaymentDAO.getInstance();
-List<PaymentObject> list = null;
+List<PaymentDTO> list = null;
 
 list = dao.getPaymentList();
 
@@ -31,7 +31,7 @@ list = dao.getPaymentList();
 
 <% 
 for(int i = 0; i < list.size(); i++){
-	PaymentObject po = list.get(i);
+	PaymentDTO po = list.get(i);
 %>
 
 <tr>

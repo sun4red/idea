@@ -11,16 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.Action;
 import service.ActionForward;
+import service.BoardWrite;
 import service.Login;
 
 /**
  * Servlet implementation class ACCController
  */
+@WebServlet("*.acc")
 public class ACCController extends HttpServlet {
 
+	/*
+	 * public void viewConsole(HttpServletRequest request, HttpServletResponse
+	 * response) throws ServletException, IOException{
+	 * 
+	 * String requestURI = request.getRequestURI(); String contextPath =
+	 * request.getContextPath(); String command =
+	 * requestURI.substring(contextPath.length());
+	 * 
+	 * System.out.println("requestURI : " + requestURI);
+	 * System.out.println("contextPath : " + contextPath);
+	 * System.out.println("command : " + command); }
+	 */
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		String requestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String command = requestURI.substring(contextPath.length());
@@ -28,23 +42,29 @@ public class ACCController extends HttpServlet {
 		System.out.println("requestURI : " + requestURI);
 		System.out.println("contextPath : " + contextPath);
 		System.out.println("command : " + command);
-
+		
 		Action action = null;
 		ActionForward forward = null;
-
+		
 		
 		// 로그인
-		if(command.equals("/login/Login.acc")) {
+		if(command.equals("/Login.acc")) {
 			try {
 				action = new Login();
 				forward = action.execute(request, response);
+				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
+		}else if(command.equals("/BoardWrite.acc")) {
+			try {
+				action = new BoardWrite();
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+				
+			}
 		}
-		
-		
-		
 		
 		
 		
@@ -58,6 +78,10 @@ public class ACCController extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 		}
+		
+		
+		
+
 
 	}	// doProcess end
 

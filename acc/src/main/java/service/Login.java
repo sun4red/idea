@@ -35,7 +35,7 @@ public class Login implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./login/state.jsp");
+		forward.setPath("./login/viewSession.jsp");
 		
 		return forward;
 	}
