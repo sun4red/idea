@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body> WEB-INF/views/mainTest.jsp 파일 확인
+<body>
+<script type = "text/javascript">
+location.href="tomain";
+</script>
 </body>
 </html>

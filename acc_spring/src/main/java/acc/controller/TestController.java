@@ -4,13 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MainController {
+public class TestController {
 
-	@RequestMapping("mainTest.acc")
-	public String mainTest() {
+	
+	@RequestMapping("tomain")	
+	public String toMain() {
 		
 		
-		return "mainTest";
+		return "boardForm";
 	}
 	
 }
