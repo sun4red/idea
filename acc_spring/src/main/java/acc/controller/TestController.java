@@ -11,12 +11,13 @@ public class TestController {
 
 	private static final Logger logger = LoggerFactory.getLogger(Test.class);
 	
-	@RequestMapping("/")	
+	@RequestMapping("/test")	
 	public String toMain() {
 		
-	logger.info("testing");
+		System.out.println("테스트 컨트롤러 접근");
+		logger.info("testing");
 		
-		return "board/boardForm";
+		return "board/insertForm";
 	}
 	
 }

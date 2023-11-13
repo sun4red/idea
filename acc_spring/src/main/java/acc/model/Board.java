@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class Board {
 
 	private int num;
-	private String name;
+	private String writer;
 	private String subject;
 	private String content;
 	private String file;
@@ -23,14 +23,14 @@ public class Board {
 		this.num = num;
 	}
 
-	public String getName() {
-		return name;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
-
+	
 	public String getSubject() {
 		return subject;
 	}
@@ -93,6 +93,46 @@ public class Board {
 
 	public void setBoard_date(Timestamp board_date) {
 		this.board_date = board_date;
+	}
+
+	// page
+	private int startRow;
+	private int endRow;
+	
+	// 검색
+	private String search;
+	private String keyword;
+	
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public int getStartRow() {
+		return startRow;
+	}
+
+	public void setStartRow(int startRow) {
+		this.startRow = startRow;
+	}
+
+	public int getEndRow() {
+		return endRow;
+	}
+
+	public void setEndRow(int endRow) {
+		this.endRow = endRow;
 	}
 
 }
